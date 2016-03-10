@@ -2,7 +2,8 @@ FROM resin/rpi-raspbian:wheezy-20160309
 
 RUN apt-get update \
  && apt-get install -y \
-    libtool-bin \
+    cmake \
+    libtool \
     libdaemon-dev \
     libasound2-dev \
     libpopt-dev \
@@ -10,8 +11,15 @@ RUN apt-get update \
     avahi-daemon \
     libavahi-client-dev \
     libpolarssl-dev \
-    libsoxr-dev \
  && rm -rf /var/lib/apt/lists/*
+
+RUN cd /root \
+ && git clone git://git.code.sf.net/p/soxr/code libsoxr \
+ && cd libsoxr
+ && ./go
+ && cd Release
+ && make install
+ && ldconfig -v
 
 RUN cd /root \
  && git clone https://github.com/mikebrady/shairport-sync.git \
