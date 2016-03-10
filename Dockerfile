@@ -2,11 +2,12 @@ FROM resin/rpi-raspbian:jessie-20160309
 
 RUN apt-get update \
  && apt-get install -y \
+    git \
+    curl \
     build-essential \
     autoconf \
     automake \
-    git \
-    curl \
+    cmake \
     libtool \
     libdaemon-dev \
     libasound2-dev \
@@ -16,13 +17,6 @@ RUN apt-get update \
     libavahi-client-dev \
     libpolarssl-dev \
  && rm -rf /var/lib/apt/lists/*
-
-RUN cd /root \
- && curl -O http://www.cmake.org/files/v3.2/cmake-3.2.2.tar.gz \
- && tar xf cmake-3.2.2.tar.gz \
- && cd cmake-3.2.2 \
- && ./configure \
- make && make install
 
 RUN cd /root \
  && git clone git://git.code.sf.net/p/soxr/code libsoxr \
