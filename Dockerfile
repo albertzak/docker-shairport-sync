@@ -5,7 +5,6 @@ RUN apt-get update \
     build-essential \
     autoconf \
     automake \
-    cmake \
     git \
     libtool \
     libdaemon-dev \
@@ -16,6 +15,13 @@ RUN apt-get update \
     libavahi-client-dev \
     libpolarssl-dev \
  && rm -rf /var/lib/apt/lists/*
+
+RUN cd /root \
+ && wget http://www.cmake.org/files/v3.2/cmake-3.2.2.tar.gz \
+ && tar xf cmake-3.2.2.tar.gz \
+ && cd cmake-3.2.2 \
+ && ./configure \
+ make && make install
 
 RUN cd /root \
  && git clone git://git.code.sf.net/p/soxr/code libsoxr \
