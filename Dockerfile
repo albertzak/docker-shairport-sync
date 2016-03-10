@@ -2,7 +2,11 @@ FROM resin/rpi-raspbian:wheezy-20160309
 
 RUN apt-get update \
  && apt-get install -y \
+    build-essential \
+    autoconf \
+    automake \
     cmake \
+    git \
     libtool \
     libdaemon-dev \
     libasound2-dev \
