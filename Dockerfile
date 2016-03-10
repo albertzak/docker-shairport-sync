@@ -1,5 +1,4 @@
-FROM buildpack-deps
-MAINTAINER kevineye@gmail.com
+FROM FROM resin/%%RESIN_MACHINE_NAME%%-debian
 
 RUN apt-get update \
  && apt-get install -y \
@@ -17,7 +16,7 @@ RUN apt-get update \
 RUN cd /root \
  && git clone https://github.com/mikebrady/shairport-sync.git \
  && cd /root/shairport-sync \
- && git checkout -q tags/2.6 \
+ && git checkout -q tags/2.9.2 \
  && autoreconf -i -f \
  && ./configure --with-alsa --with-pipe --with-avahi --with-ssl=polarssl --with-soxr --with-metadata \
  && make \
