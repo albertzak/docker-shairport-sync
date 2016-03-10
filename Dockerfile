@@ -18,7 +18,7 @@ RUN apt-get update \
 
 RUN apt-get update
 
-RUN run apt-get install -y wget
+RUN apt-get install -y wget
 
 RUN cd /root \
  && wget http://www.cmake.org/files/v3.2/cmake-3.2.2.tar.gz \
