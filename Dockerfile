@@ -32,5 +32,6 @@ RUN cd /root \
 COPY start.sh /start
 
 ENV AIRPLAY_NAME Docker
+ENV OUTPUT_NAME Speaker
 
 ENTRYPOINT [ "/start" ]
