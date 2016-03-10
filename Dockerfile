@@ -19,10 +19,10 @@ RUN apt-get update \
 
 RUN cd /root \
  && git clone git://git.code.sf.net/p/soxr/code libsoxr \
- && cd libsoxr
- && ./go
- && cd Release
- && make install
+ && cd libsoxr \
+ && ./go \
+ && cd Release \
+ && make install \
  && ldconfig -v
 
 RUN cd /root \
