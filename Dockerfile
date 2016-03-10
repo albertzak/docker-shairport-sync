@@ -18,10 +18,7 @@ RUN apt-get update \
     libpolarssl-dev \
     libsoxr-dev \
     ca-certificates \
-    ntpdate \
  && rm -rf /var/lib/apt/lists/*
-
-RUN ntpdate -u ntp.ubuntu.com
 
 RUN cd /root \
  && git clone https://github.com/mikebrady/shairport-sync.git \
