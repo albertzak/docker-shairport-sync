@@ -1,4 +1,4 @@
-FROM FROM resin/%%RESIN_MACHINE_NAME%%-debian
+FROM FROM resin/rpi-raspbian:wheezy-20160309
 
 RUN apt-get update \
  && apt-get install -y \
