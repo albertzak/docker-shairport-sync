@@ -2,7 +2,8 @@
 
 set -e
 
-mkdir /var/run/dbus
+rm -rf /var/run/dbus || true
+mkdir /var/run/dbus || true
 
 echo "Starting dbus-daemon"
 dbus-daemon --system --fork
