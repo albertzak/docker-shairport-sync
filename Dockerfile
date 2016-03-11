@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:jessie-20160309
+FROM resin/armv7hf-debian
 
 RUN apt-get update \
  && apt-get install -y \
