@@ -29,10 +29,11 @@ RUN cd /root \
  && make \
  && make install
 
-COPY start.sh /start
 
 ENV AIRPLAY_NAME Docker
 ENV OUTPUT_NAME Speaker
 ENV INITSYSTEM on
+
+COPY start.sh /start
 
 ENTRYPOINT [ "/start" ]
