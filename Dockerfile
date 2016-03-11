@@ -1,4 +1,6 @@
-FROM resin/raspberrypi3-debian
+FROM resin/armv7hf-systemd:latest
+
+ENV INITSYSTEM on
 
 RUN apt-get update \
  && apt-get install -y \
@@ -32,7 +34,6 @@ RUN cd /root \
 
 ENV AIRPLAY_NAME Docker
 ENV OUTPUT_NAME Speaker
-ENV INITSYSTEM on
 
 COPY start.sh /start
 
