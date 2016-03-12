@@ -37,6 +37,9 @@ ENV OUTPUT_NAME Speaker
 ENV DISPLAY :0
 ENV DBUS_SESSION_BUS_ADDRESS dbus:
 
+RUN mkdir -p /var/run/dbus
+VOLUME /var/run/dbus
+
 COPY start.sh /start
 
 ENTRYPOINT [ "/start" ]

@@ -15,7 +15,7 @@ echo "Stopping avahi-daemon"
 systemctl stop avahi-daemon
 
 echo "Starting avahi-daemon"
-avahi-daemon --debug
+avahi-daemon --no-drop-root --debug
 
 sleep 5s
 
