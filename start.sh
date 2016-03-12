@@ -2,7 +2,7 @@
 
 set -e
 
-echo $(ps aux | grep systemd | grep -v grep)
+echo "Systemd processes: $(ps aux | grep systemd | grep -v grep)"
 
 echo "Starting dbus-daemon"
 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
