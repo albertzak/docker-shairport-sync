@@ -38,7 +38,10 @@ ENV DISPLAY :0
 ENV DBUS_SESSION_BUS_ADDRESS dbus:
 
 RUN mkdir -p /var/run/dbus
+
 VOLUME /var/run/dbus
+VOLUME /run/systemd
+VOLUME /usr/bin/systemctl
 
 COPY start.sh /start
 
