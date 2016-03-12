@@ -27,13 +27,15 @@ RUN cd /root \
  && cd /root/shairport-sync \
  && git checkout -q tags/2.9.2 \
  && autoreconf -i -f \
- && ./configure --with-alsa --with-pipe --with-avahi --with-ssl=polarssl --with-soxr --with-metadata \
+ && ./configure --with-alsa --with-pipe --with-avahi --with-ssl=polarssl --with-soxr --with-metadata --with-systemd \
  && make \
  && make install
 
 
 ENV AIRPLAY_NAME Docker
 ENV OUTPUT_NAME Speaker
+ENV DISPLAY :0
+ENV DBUS_SESSION_BUS_ADDRESS dbus:
 
 COPY start.sh /start
 

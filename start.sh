@@ -2,6 +2,11 @@
 
 set -e
 
+echo $(ps aux | grep systemd | grep -v grep)
+
+echo "Starting dbus-daemon"
+/usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+
 # Set host-name and enable-dbus
 sed -i -e "s@#enable-dbus=yes@enable-dbus=yes@" -e "s@#host-name=foo@host-name=$(echo $RESIN_DEVICE_UUID | cut -c1-7)@" /etc/avahi/avahi-daemon.conf
 
