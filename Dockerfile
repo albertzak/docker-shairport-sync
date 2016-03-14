@@ -15,6 +15,7 @@ RUN apt-get update \
     libasound2-dev \
     libpopt-dev \
     libconfig-dev \
+    libnss-mdns \
     avahi-daemon \
     libavahi-client-dev \
     libpolarssl-dev \
