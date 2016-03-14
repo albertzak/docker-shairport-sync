@@ -48,4 +48,5 @@ COPY start.sh /start
 
 EXPOSE 5000 5353
 
-CMD [ "/sbin/init", "/start" ]
+CMD [ "/sbin/init" ]
+ENTRYPOINT [ "/start" ]
