@@ -36,13 +36,16 @@ ENV AIRPLAY_NAME Docker
 ENV OUTPUT_NAME Speaker
 ENV DISPLAY :0
 ENV DBUS_SESSION_BUS_ADDRESS dbus:
-
+ENV container=docker
 RUN mkdir -p /var/run/dbus
 
 VOLUME /var/run/dbus
 VOLUME /run/systemd
 VOLUME /usr/bin/systemctl
+VOLUME /sys/fs/cgroup /run /tmp
 
 COPY start.sh /start
 
-ENTRYPOINT [ "/start" ]
+EXPOSE 5000 5353
+
+CMD [ "/sbin/init", "/start" ]
