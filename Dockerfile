@@ -44,6 +44,10 @@ VOLUME /run/systemd
 VOLUME /usr/bin/systemctl
 VOLUME /sys/fs/cgroup /run /tmp
 
+COPY dbus.service /etc/systemd/system/dbus.service
+
+RUN systemctl enable dbus.service
+
 COPY start.sh /start
 
 EXPOSE 5000 5353
