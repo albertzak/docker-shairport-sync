@@ -1,4 +1,4 @@
-FROM resin/armv7hf-systemd:latest
+FROM resin/%%RESIN_MACHINE_NAME%%-systemd
 
 ENV INITSYSTEM on
 
