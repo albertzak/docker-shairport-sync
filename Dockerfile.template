@@ -1,4 +1,4 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-systemd
+FROM resin/%%RESIN_ARCH%%-systemd
 
 ENV INITSYSTEM on
 
