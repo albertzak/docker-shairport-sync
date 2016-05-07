@@ -1,4 +1,4 @@
-FROM resin/raspberrypi-systemd
+FROM resin/%%RESIN_ARCH%%-systemd
 
 ENV INITSYSTEM on
 
