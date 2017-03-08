@@ -1,5 +1,7 @@
 FROM resin/%%RESIN_ARCH%%-systemd
 
+ENV VERSION 3.0
+
 ENV INITSYSTEM on
 
 RUN apt-get update \
@@ -18,7 +20,7 @@ RUN apt-get update \
     libnss-mdns \
     avahi-daemon \
     libavahi-client-dev \
-    libpolarssl-dev \
+    libssl-dev \
     libsoxr-dev \
     ca-certificates \
  && rm -rf /var/lib/apt/lists/*
@@ -26,9 +28,9 @@ RUN apt-get update \
 RUN cd /root \
  && git clone https://github.com/mikebrady/shairport-sync.git \
  && cd /root/shairport-sync \
- && git checkout -q tags/2.9.2 \
+ && git checkout -q tags/$VERSION \
  && autoreconf -i -f \
- && ./configure --with-alsa --with-pipe --with-avahi --with-ssl=polarssl --with-soxr --with-metadata --with-systemd \
+ && ./configure --with-alsa --with-pipe --with-avahi --with-ssl=openssl --with-soxr --with-metadata --with-systemd \
  && make \
  && make install
 
