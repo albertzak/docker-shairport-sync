@@ -18,5 +18,5 @@ git push resin
 
 Set the following environment variables thorugh the Resin control panel
 
-* `AIRPLAY_NAME` (Default: Docker)
-* `OUTPUT_NAME` (Default: Speaker)
+* `AIRPLAY_NAME` (Default: Docker) Change this to anything you want.
+* `OUTPUT_NAME` (Default: Speaker) Don't change this unless there is no sound.  It should work automatically through either the built-in 3.5mm jack, or most cheap USB sound cards such as those "3D Sound" ones. Use `amixer` or `alsamixer` or similar to discover the name of the output sound card.
